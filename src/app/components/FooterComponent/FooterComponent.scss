@@ -1,0 +1,11 @@
+.footerArea{
+    height: 10rem;
+    width: calc(100%-13rem);
+    position: fixed;
+    top: calc(100%-10rem);
+    bottom:0;
+    right: 0;
+    left: 10rem;
+    background-color: rgb(204, 252, 252);
+    border-top: 0.5px solid rgb(140, 255, 255);
+}

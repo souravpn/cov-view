@@ -1,0 +1,115 @@
+.mainViewArea{
+    height: calc(100%-20rem);
+    width: calc(100%-13rem);
+    position: fixed;
+    top:10rem;
+    right: 0;
+    left: 13rem;
+    bottom: 10rem;
+    background-color: rgb(230, 255, 255);
+    overflow: scroll;
+    .HighLevelStatsArea{
+        height: 7rem;
+        width: 100%;
+        // background-color: rgb(3, 143, 143);
+        padding-left: 2rem;
+        .HighLevelStatsAreaPanel{
+            height: 7rem;
+            width: 80%;
+            // background-color: rgb(3, 59, 59);
+            .HighLevelStatsBox{
+                height: 7rem;
+                // width: 10rem;
+                // background-color: rgb(205, 211, 211);
+                // margin-left: 10px;
+                // border: 1px solid black !important;
+                border-bottom: 1px solid black !important;
+                // border-radius: 10px 10px 10px 10px;
+                // padding-top: 1rem;
+                .HighLevelStatsBoxContent{
+                    height: 5rem;
+                    width: 100%;
+                    // background-color: rgb(4, 54, 54);
+                    border-radius: 0px 0px 10px 10px;
+                    // padding-top: 2rem;
+                    .HighLevelStatsBoxContentText{
+                        font-family: 'Courier New', Courier, monospace;
+                        font-weight: 700;
+                        font-size: 2em;
+                    }
+                    :hover{
+                        opacity: 0.3;
+                    }
+                }
+                .HighLevelStatsBoxHeader{
+                    margin-top:1rem;
+                    height: 2rem;
+                    width: 100%;
+                    // background-color: rgb(80, 255, 255);
+                    border-radius: 10px 10px 0px 0px;
+                }
+            }
+            // :hover{
+            //     background-color: rgb(228, 228, 228);
+            // }
+        }
+    }
+    .mainViewAreaHeading{
+        height: 2rem;
+        width: 100%;
+        padding-left: 2rem;
+        padding-top: 5px;
+        // background-color: rgb(80, 255, 255);
+        .mainViewAreaHeadingText{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+            font-size: 1em;
+        }
+    }
+    .allCountryTableArea{
+        height: calc(100%-2rem);
+        width: 100%;
+        margin-bottom: 2rem;
+        padding-left: 2rem;
+        // background-color: rgb(80, 255, 255);
+        .allCountryTable{
+            // border: 1px solid rgb(0, 0, 0);
+            width: 90%;
+            .allCountryTableRow{
+                border-bottom: 1px solid black;
+                .allCountryTableCol{
+                    // border: 1px solid black;
+                    border-bottom: 1px solid black;
+                    height: 4rem;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    .allCountryTableText{
+                        font-family: 'Courier New', Courier, monospace;
+                        font-weight: 700;
+                        font-size: 2em;
+                    }
+                }
+            }
+            .allCountryTableRowHeader{
+                .allCountryTableColHeader{
+                    height: 3rem;
+                    border-radius: 5px 5px 5px 5px;
+                    background-color: rgb(204, 252, 252);
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    .allCountryTableTextHeader{
+                        font-family: 'Courier New', Courier, monospace;
+                        font-weight: 700;
+                        font-size: 1em;
+                    }
+                }
+                :hover{
+                    background-color: rgb(155, 190, 190);
+                }
+                :active{
+                    background-color: rgb(126, 160, 160);
+                }
+            }
+        }
+    }
+}

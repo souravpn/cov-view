@@ -1,0 +1,59 @@
+.headerArea{
+    height: 10rem;
+    width: calc(100%-13rem);
+    position: fixed;
+    top: 0;
+    // bottom:0;
+    right: 0;
+    left: 13rem;
+    background-color: rgb(230, 255, 255);
+    border-bottom: 0.5px solid rgb(140, 255, 255);
+    .headerAreaHeading{
+        height: 2rem;
+        width: 100%;
+        padding-left: 2rem;;
+        padding-top: 5px;
+        // position: fixed;
+        // background-color: rgb(123, 126, 126);
+        .headerAreaHeadingText{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+            font-size: 1em;
+        }
+    }
+    .HighLevelStatsArea{
+        height: 7rem;
+        width: 100%;
+        padding-left: 2rem;
+        .HighLevelStatsAreaPanel{
+            height: 7rem;
+            width: 80%;
+            .HighLevelStatsBox{
+                height: 7rem;
+                border-bottom: 1px solid black !important;
+                .HighLevelStatsBoxContent{
+                    height: 5rem;
+                    width: 100%;
+                    border-radius: 0px 0px 10px 10px;
+                    .HighLevelStatsBoxContentText{
+                        font-family: 'Courier New', Courier, monospace;
+                        font-weight: 700;
+                        font-size: 2em;
+                    }
+                    :hover{
+                        opacity: 0.3;
+                    }
+                }
+                .HighLevelStatsBoxHeader{
+                    margin-top:1rem;
+                    height: 2rem;
+                    width: 100%;
+                    border-radius: 10px 10px 0px 0px;
+                }
+            }
+            // :hover{
+            //     background-color: rgb(228, 228, 228);
+            // }
+        }
+    }
+}
