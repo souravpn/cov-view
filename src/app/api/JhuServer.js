@@ -25,6 +25,10 @@ class JhuServer {
     getHistoricalStats(){
         return axios.get(`https://corona.lmao.ninja/v2/historical`);
     }
+
+    getHistoricalStatsByCountry(){
+        return axios.get(`https://pomber.github.io/covid19/timeseries.json`);
+    }
 }
 
 export default new JhuServer();

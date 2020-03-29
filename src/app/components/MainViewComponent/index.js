@@ -5,6 +5,7 @@ import JhuServer from '../../api/JhuServer';
 import './MainViewComponent.scss'
 import HighLevelStats from './HighLevelStats';
 import AllCountries from './AllCountriesComponent';
+import Chart from './chart';
 
 const MainView = (props) => {
 
@@ -31,6 +32,10 @@ const MainView = (props) => {
 
             {/* Render country stats */}
             {(selectedCountry!==undefined && selectedCountry!=="ALL_COUNTRIES") && <HighLevelStats countryName={selectedCountry.country}/>}
+
+            {/* Render country chart */}
+            {(selectedCountry!==undefined && selectedCountry!=="ALL_COUNTRIES") && <Chart countryNameList={[selectedCountry.country]}/>}
+
         </div>
     )
 

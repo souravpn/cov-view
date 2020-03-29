@@ -1,7 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, {Switch, Route} from 'react-dom';
 import './index.css';
 import App from './App';
+import ComparisonChart from './app/components/MainViewComponent/ComparsionChart.jsx'
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

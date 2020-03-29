@@ -5,7 +5,7 @@
     top:10rem;
     right: 0;
     left: 13rem;
-    bottom: 10rem;
+    bottom: 3rem;
     background-color: rgb(230, 255, 255);
     overflow: scroll;
     .HighLevelStatsArea{
@@ -66,8 +66,48 @@
             font-size: 1em;
         }
     }
+    .countryComparisionHeader{
+        width: 90%;
+        height: 7rem;
+        .countryComparisionPanel{
+            height: 100%;
+            margin-left: 2rem;
+            // background-color: pink;
+            .countryComparisionButton{
+                height: 30%;
+                width: 22rem;
+                padding-top: 10px;
+                background-color: rgb(201, 201, 201);
+                border: 1px solid rgb(0, 0, 0);
+                border-radius: 10px 10px 10px 10px;
+                .countryComparisionText{
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: 700;
+                    font-size: 1em;
+                }
+            }
+            :hover{
+                background-color: rgb(218, 218, 218);
+            }
+            :active{
+                background-color: rgb(190, 190, 190);
+            }
+
+            .countryComparisionList{
+                margin-top: 5px;
+                height: 50%;
+                width: 100%;
+                // background-color: rgb(201, 201, 201);
+                .countryComparisionListText{
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: 700;
+                    font-size: 1em;
+                }
+            }
+        }
+    }
     .allCountryTableArea{
-        height: calc(100%-2rem);
+        height: calc(100%-10rem);
         width: 100%;
         margin-bottom: 2rem;
         padding-left: 2rem;
@@ -86,7 +126,7 @@
                     .allCountryTableText{
                         font-family: 'Courier New', Courier, monospace;
                         font-weight: 700;
-                        font-size: 2em;
+                        font-size: 1.5em;
                     }
                 }
             }
@@ -110,6 +150,25 @@
                     background-color: rgb(126, 160, 160);
                 }
             }
+        }
+    }
+    .chartContainerArea{
+        width: 80%;
+        height: 30rem;
+        margin-top: 2rem;
+        // background-color: rgb(213, 255, 255);
+        margin-bottom: 2rem;
+        margin-left: 2rem;
+        .chartButtonPanel{
+            width: 100%;
+            height: 3rem;
+            // background-color: rgb(131, 131, 131);
+        }
+        .chartResponsiveContainer{
+            // background-color: khaki;
+            // top: 10rem;
+            width: 100%;
+            height: calc(100%-3rem);
         }
     }
 }
