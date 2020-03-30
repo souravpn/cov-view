@@ -1,3 +1,4 @@
+
 .mainViewArea{
     height: calc(100%-13rem);
     width: calc(100%-13rem);
@@ -163,12 +164,118 @@
             width: 100%;
             height: 3rem;
             // background-color: rgb(131, 131, 131);
+            .chartButton{
+                float: left;
+                width: 10%;
+                height: 2rem;
+                // background-color: rgb(202, 202, 202);
+                border: 1px solid rgb(141, 141, 141);
+                border-radius: 5px 5px 5px 5px;
+                margin-right: 2rem;
+                padding-top: 5px;
+                .chartButton-Text{
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: 700;
+                    font-size: 1em;
+                    color: grey;
+                }
+            }
+            :hover{
+                background-color: rgb(211, 211, 211);
+            }
+            :active{
+                background-color: rgb(182, 182, 182);
+            }
+
+            .chartButton-enabled{
+                float: left;
+                width: 10%;
+                height: 2rem;
+                // background-color: rgb(182, 182, 182);
+                border: 1px solid rgb(73, 73, 73);
+                border-radius: 5px 5px 5px 5px;
+                margin-right: 2rem;
+                padding-top: 5px;
+                .chartButton-Text{
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: 700;
+                    font-size: 1em;
+                    color: white;
+                }
+            }
+            :hover{
+                background-color: rgb(211, 211, 211);
+            }
+            :active{
+                background-color: rgb(182, 182, 182);
+            }
         }
         .chartResponsiveContainer{
             // background-color: khaki;
-            // top: 10rem;
+            margin-top: 1rem;
             width: 100%;
             height: calc(100%-3rem);
+        }
+        .tooltip-card{
+            height: auto;
+            width: auto;
+            .tooltip-card-header{
+                padding-right: 1rem;
+                padding-left: 1rem;
+                padding-top: 0.5rem;
+                height: 3rem;
+                width: 100%;
+                border-radius: 5px 5px 0px 0px;
+                background-color: rgba(221, 221, 221, 0.733);
+                border: 1px solid rgb(173, 173, 173);
+                border-bottom: 0 !important;
+                .tooltip-card-header-text{
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: 700;
+                    font-size: 1em;
+                    color: black;
+                }
+                .tooltip-card-header-subtitle{
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: 700;
+                    font-size: 0.5em;
+                    color: rgb(235, 13, 13);
+                    font-style: oblique;
+                }
+            }
+            .tooltip-card-body{
+                padding-right: 1rem;
+                padding-left: 1rem;
+                padding-top: 0.5rem;
+                padding-bottom: 1rem;
+                height: calc(100%-3rem);
+                width: 100%;
+                border-radius: 0px 0px 5px 5px;
+                background-color: rgba(221, 221, 221, 0.733);
+                border: 1px solid rgb(173, 173, 173);
+                border-top: 0 !important;
+                .tooltip-card-body-text{
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: 400;
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+    .ack-Container{
+        height: 100%;
+        width: 100%;
+        // background-color: rgb(182, 182, 182);
+        .ack-Container-text-area{
+            height: 90%;
+            width: 60%;
+            padding-top:3rem;
+            // background-color: rgb(243, 179, 179);
+            .ack-Container-text{
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: 400;
+                font-size: 1em;
+            }
         }
     }
 }

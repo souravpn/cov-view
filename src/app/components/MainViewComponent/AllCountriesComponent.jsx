@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react';
+import { withRouter } from 'react-router-dom';
 
 import JhuServer from '../../api/JhuServer';
 
@@ -6,7 +7,7 @@ import './MainViewComponent.scss'
 import Chart from './chart';
 
 const AllCountries = () => {
-
+    // console.log(this.props);
     var nf = new Intl.NumberFormat();
     
     const[allCountryList, setAllCountryList] = useState(undefined);
@@ -26,9 +27,9 @@ const AllCountries = () => {
         JhuServer.getStatsByAllCountry()
         .then(response => setAllCountryList(response.data))
         .catch()
-    }, [allCountryList])
+    }, [])
 
-    // console.log(allCountryList)
+    console.log(allCountryList)
 
     const updateComparsionKey = (value) => {
         console.log(`new key = ${value}`)
@@ -108,7 +109,7 @@ const AllCountries = () => {
             value.map(
                 cntry => (
                     <tr className="allCountryTableRow">
-                        {/* <td className="allCountryTableCol"><input type="checkbox" onClick={()=>updateCountryComparisionList(cntry.country)}/></td> */}
+                        <td className="allCountryTableCol"><input type="checkbox" onClick={()=>updateCountryComparisionList(cntry.country)}/></td>
                         <td className="allCountryTableCol" align="left"><a className="allCountryTableText" style={{"color":"black", "fontSize": "1em"}}>{cntry.country}</a></td>
                         <td className="allCountryTableCol" align="right"><a className="allCountryTableText" style={{"color":"blue"}}>{nf.format(cntry.cases)}</a></td>
                         <td className="allCountryTableCol" align="right"><a className="allCountryTableText" style={{"color":"blue"}}>{nf.format(cntry.todayCases)}</a></td>
@@ -125,7 +126,9 @@ const AllCountries = () => {
 
     const redirectToCntryComparison = (countryComparisionList) => {
         let compString = countryComparisionList.join("&")
-        this.props.history.push(`/compare-countries/${compString}`);
+        // this.props.history.push(`/compare-countries/${compString}`);
+        // window.location.href = `/compare-countries/${compString}`
+        window.open(`/compare-countries/${compString}`);
     }
 
     // const showCntryComparison = (countryComparisionList) => {
@@ -138,16 +141,16 @@ const AllCountries = () => {
             {/* {comparisonChartEnabled && <Chart countryNameList={countryComparisionList}/>} */}
              
             {/* comparison header */}
-            {/* {!comparisonChartEnabled && <div className="countryComparisionHeader">
+            {!comparisonChartEnabled && <div className="countryComparisionHeader">
                 <div className="countryComparisionPanel">
-                    <div className="countryComparisionButton" onClick={()=>setComparisonChartEnabled(!comparisonChartEnabled)}>
+                    <div className="countryComparisionButton" onClick={()=>redirectToCntryComparison(countryComparisionList)}>
                         <a className="countryComparisionText">{countryComparisionList.length>1 ? "Compare" : "Select Countries to compare cases"}</a>
                     </div>
                     {countryComparisionList.length>1 && <div className="countryComparisionList" align="left">
                         <a className="countryComparisionListText">Queued for comparision: {countryComparisionList.map(x => <a>{x},</a>)}</a>
                     </div>}
                 </div>
-            </div>} */}
+            </div>}
 
             {/* All country Table */}
             {!comparisonChartEnabled && <div className="allCountryTableArea">
@@ -155,7 +158,7 @@ const AllCountries = () => {
                 {allCountryList!==undefined && <table className="allCountryTable">
                     <thead>
                         <tr className="allCountryTableRowHeader">
-                            {/* <th className="allCountryTableColHeader"><input type="checkbox" onClick={()=>console.log("all selected")}/></th> */}
+                            <th className="allCountryTableColHeader"><input type="checkbox" onClick={()=>console.log("all selected")}/></th>
                             <th className="allCountryTableColHeader" align="left" onClick={()=>updateComparsionKey("country")}><a className="allCountryTableTextHeader" style={{"color":"black"}}>Country</a></th>
                             <th className="allCountryTableColHeader" align="right" onClick={()=>updateComparsionKey("cases")}><a className="allCountryTableTextHeader" style={{"color":"black"}}>Total Cases</a></th>
                             <th className="allCountryTableColHeader" align="right" onClick={()=>updateComparsionKey("casesToday")}><a className="allCountryTableTextHeader" style={{"color":"black"}}>Today</a></th>
@@ -176,4 +179,4 @@ const AllCountries = () => {
 
 }
 
-export default AllCountries;
+export default withRouter(AllCountries);

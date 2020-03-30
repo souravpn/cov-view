@@ -41,7 +41,7 @@ const SideViewContent = (props) => {
                     <div className="sideViewContentIcon">
                         {/* <img className="sideViewContentIconContent" src={cntry.countryInfo.flag}/> */}
                     </div>
-                    <div className="sideViewContentItems" align="left" onClick={()=>setSelectedCountry("ALL_COUNTRIES")}>
+                    <div className="sideViewContentItems" align="left" onClick={()=>(window.location.href=`/country/ALL_COUNTRIES`)}>
                         <h5 className="sideViewContentItemsText">
                             All Countries
                         </h5>
@@ -56,7 +56,8 @@ const SideViewContent = (props) => {
                     <div className="sideViewContentIcon">
                         {/* <img className="sideViewContentIconContent" src={cntry.countryInfo.flag}/> */}
                     </div>
-                    <div className="sideViewContentItems" align="left" onClick={()=>setSelectedCountry(cntry)}>
+                    {/* <div className="sideViewContentItems" align="left" onClick={()=>setSelectedCountry(cntry)}> */}
+                    <div className="sideViewContentItems" align="left" onClick={()=>(window.location.href=`/country/${cntry.country}`)}>
                         <h5 className="sideViewContentItemsText">
                             {/* <img src={cntry.countryInfo.flag}/> */}
                             {cntry.country}

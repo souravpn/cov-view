@@ -15,8 +15,8 @@ const SideView = (props) => {
 
     return(
         <div className="sideViewPane">
-            <div className="sideViewPaneHeader" align="left">
-                <a className="sideViewPaneHeaderText"> Cov-View</a>
+            <div className="sideViewPaneHeader" align="left" onClick={()=>(window.location.href="/")}>
+                <a className="sideViewPaneHeaderText"> Cov.View</a>
             </div>
 
             <div className="sideViewPaneSubHeader" align="left">

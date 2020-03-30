@@ -6,8 +6,6 @@ import './MainViewComponent.scss'
 
 const HighLevelStats = (props) => {
 
-    // console.log("HighLevelStats");
-    // console.log(props);
     const countryName = props.countryName;
     const [countryData, setCountryData] = useState(undefined);
 
@@ -18,8 +16,6 @@ const HighLevelStats = (props) => {
         .then(response => setCountryData(response.data))
         .catch()
     }, [countryName]);
-
-    console.log(countryData);
 
     return(
         <React.Fragment>
@@ -50,15 +46,21 @@ const HighLevelStats = (props) => {
                                     <div className="HighLevelStatsBoxContentText" style={{"color":"blue"}}>
                                         {countryData!==undefined ? nf.format(countryData.cases) : "Loading..."}
                                     </div>
+                                    <div className="HighLevelStatsBoxContentText" style={{"color":"blue", "fontSize":"1rem"}}>
+                                        {countryData!==undefined ? "(Today)"+nf.format(countryData.todayCases) : "Loading..."}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="column" style={{"width":"20%", "float":"left"}}>
                             <div className="HighLevelStatsBox">
-                                <div className="HighLevelStatsBoxHeader">Deaths</div>
+                                <div className="HighLevelStatsBoxHeader">Total Deaths</div>
                                 <div className="HighLevelStatsBoxContent">
                                     <div className="HighLevelStatsBoxContentText" style={{"color":"red"}}>
                                         {countryData!==undefined ? nf.format(countryData.deaths) : "Loading..."}
+                                    </div>
+                                    <div className="HighLevelStatsBoxContentText" style={{"color":"red", "fontSize":"1rem"}}>
+                                        {countryData!==undefined ? "(Today)"+nf.format(countryData.todayDeaths) : "Loading..."}
                                     </div>
                                 </div>
                             </div>

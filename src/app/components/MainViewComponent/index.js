@@ -8,13 +8,7 @@ import AllCountries from './AllCountriesComponent';
 import Chart from './chart';
 
 const MainView = (props) => {
-
-    const selectedCountry = props.selectedCountry;
-    const setSelectedCountry = props.setSelectedCountry;
-
-    console.log(props);
-
-    // const selectedCountryName = selectedCountry.country;
+    const selectedCountry = props.match.params;
 
     return(
         <div className="mainViewArea">
@@ -22,19 +16,19 @@ const MainView = (props) => {
             <div className="mainViewAreaHeading" align="left">
                 <div className="mainViewAreaHeadingText">
                     {selectedCountry===undefined && "Please select a country to see details"}
-                    {(selectedCountry!==undefined && selectedCountry==="ALL_COUNTRIES") && "Country wise cases"}
-                    {(selectedCountry!==undefined && selectedCountry!=="ALL_COUNTRIES") && selectedCountry.country}
+                    {(selectedCountry!==undefined && selectedCountry.country==="ALL_COUNTRIES") && "Country wise cases"}
+                    {(selectedCountry!==undefined && selectedCountry.country!=="ALL_COUNTRIES") && selectedCountry.country}
                 </div>
             </div>
 
             {/* Render All country stats */}
-            {(selectedCountry!==undefined && selectedCountry==="ALL_COUNTRIES") && <AllCountries/>}
+            {(selectedCountry!==undefined && selectedCountry.country==="ALL_COUNTRIES") && <AllCountries/>}
 
             {/* Render country stats */}
-            {(selectedCountry!==undefined && selectedCountry!=="ALL_COUNTRIES") && <HighLevelStats countryName={selectedCountry.country}/>}
+            {(selectedCountry!==undefined && selectedCountry.country!=="ALL_COUNTRIES") && <HighLevelStats countryName={selectedCountry.country}/>}
 
             {/* Render country chart */}
-            {(selectedCountry!==undefined && selectedCountry!=="ALL_COUNTRIES") && <Chart countryNameList={[selectedCountry.country]}/>}
+            {(selectedCountry!==undefined && selectedCountry.country!=="ALL_COUNTRIES") && <Chart countryNameList={[selectedCountry.country]}/>}
 
         </div>
     )
