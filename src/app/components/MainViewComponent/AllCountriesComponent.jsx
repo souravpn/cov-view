@@ -18,6 +18,8 @@ const AllCountries = () => {
     const[comparisonChartEnabled, setComparisonChartEnabled] = useState(false);
     
     const updateCountryComparisionList = (val) => {
+        // console.log("updateCountryComparisionList")
+        // console.log(val)
         let countryComparisionListTemp = countryComparisionList;
         countryComparisionListTemp.includes(val) ? countryComparisionListTemp.pop(val) : countryComparisionListTemp.push(val)
         setCountryComparisionList(countryComparisionListTemp);
@@ -27,12 +29,12 @@ const AllCountries = () => {
         JhuServer.getStatsByAllCountry()
         .then(response => setAllCountryList(response.data))
         .catch()
-    }, [])
+    }, [allCountryList])
 
-    console.log(allCountryList)
+    // console.log(allCountryList)
 
     const updateComparsionKey = (value) => {
-        console.log(`new key = ${value}`)
+        // console.log(`new key = ${value}`)
         if(comparisionKey===value){
             setComparisionKeyAsc(!comparisionKeyAsc);
         }else{
@@ -147,7 +149,7 @@ const AllCountries = () => {
                         <a className="countryComparisionText">{countryComparisionList.length>1 ? "Compare" : "Select Countries to compare cases"}</a>
                     </div>
                     {countryComparisionList.length>1 && <div className="countryComparisionList" align="left">
-                        <a className="countryComparisionListText">Queued for comparision: {countryComparisionList.map(x => <a>{x},</a>)}</a>
+                        <a className="countryComparisionListText">Queued for comparision: {countryComparisionList.join(",")}</a>
                     </div>}
                 </div>
             </div>}

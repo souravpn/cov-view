@@ -36,8 +36,9 @@
                     .HighLevelStatsBoxContentText{
                         font-family: 'Courier New', Courier, monospace;
                         font-weight: 700;
-                        font-size: 2em;
+                        font-size: 2vw; //vw - ViewportWidth for responsive content
                     }
+                    
                     :hover{
                         opacity: 0.3;
                     }
@@ -127,7 +128,7 @@
                     .allCountryTableText{
                         font-family: 'Courier New', Courier, monospace;
                         font-weight: 700;
-                        font-size: 1.5em;
+                        font-size: 1.5vw;
                     }
                 }
             }
@@ -141,7 +142,7 @@
                     .allCountryTableTextHeader{
                         font-family: 'Courier New', Courier, monospace;
                         font-weight: 700;
-                        font-size: 1em;
+                        font-size: 1rem;
                     }
                 }
                 :hover{
@@ -166,7 +167,7 @@
             // background-color: rgb(131, 131, 131);
             .chartButton{
                 float: left;
-                width: 10%;
+                width: 15%;
                 height: 2rem;
                 // background-color: rgb(202, 202, 202);
                 border: 1px solid rgb(141, 141, 141);
@@ -189,7 +190,7 @@
 
             .chartButton-enabled{
                 float: left;
-                width: 10%;
+                width: 15%;
                 height: 2rem;
                 // background-color: rgb(182, 182, 182);
                 border: 1px solid rgb(73, 73, 73);
