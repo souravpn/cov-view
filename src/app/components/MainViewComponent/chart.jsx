@@ -25,8 +25,17 @@ const Chart = (props) => {
     console.log(`Chart ${countryNameList}`)
 
     const cureatedCountry = (cntry) => {
-        let newCntry = (cntry==="USA" ? "US" : cntry);
+        // let newCntry = (cntry==="USA" ? "US" : cntry);
+        let newCntry = (Object.keys(cureatedCountryDict).includes(cntry) ? cureatedCountryDict[cntry] : cntry);
         return newCntry;
+    }
+    var cureatedCountryDict = {
+        "USA": "US",
+        "S. Korea": "Korea, South",
+        "St. Vincent Grenadines": "Saint Vincent and the Grenadines",
+        "Taiwan": "Taiwan*",
+        "UAE": "United Arab Emirates",
+        "UK": "United Kingdom",
     }
 
     useEffect(()=>{
@@ -34,9 +43,11 @@ const Chart = (props) => {
         JhuServer.getHistoricalStatsByCountry()
         .then(response => (
             countryNameList.map(
-                cntry => {
-                    if(Object.keys(response.data).includes(cureatedCountry(cntry))) { countryTimeSeriesListTemp[cntry] = response.data[cureatedCountry(cntry)] }
-                }
+                cntry => (
+                    // console.log(cntry);
+                    Object.keys(response.data).includes(cureatedCountry(cntry)) ? ( countryTimeSeriesListTemp[cntry] = response.data[cureatedCountry(cntry)] )
+                    : ( countryTimeSeriesListTemp[cntry] = null )
+                )
             )
         ))
         .then(()=>setCountryTimeSeriesList(countryTimeSeriesListTemp))
@@ -79,7 +90,7 @@ const Chart = (props) => {
         // console.log(Object.values(metricTimeSeriesTemp));
         return Object.values(metricTimeSeriesTemp);
     }
-    pivotTimeSeries(countryTimeSeriesList);
+    // pivotTimeSeries(countryTimeSeriesList);
 
     const renderComparisionChart = (countryTimeSeriesList, metricselected) => {
         console.log("renderChart")
@@ -126,8 +137,9 @@ const Chart = (props) => {
                         <Line type="monotone" dataKey="confirmed" stroke="blue" dot={false} />
                         <Line type="monotone" dataKey="deaths" stroke="red" dot={false} />
                         <Line type="monotone" dataKey="recovered" stroke="green" dot={false} />
-                </LineChart> 
+                </LineChart>
             </ResponsiveContainer>
+            // : <ResponsiveContainer className="chartResponsiveContainer">Sorry, Historical data is not available for this country.</ResponsiveContainer>
         )
     }
 
@@ -135,8 +147,8 @@ const Chart = (props) => {
         return(
             values.active && <div className="tooltip-card scroll">
             <div className="tooltip-card-header" align="left">
-                <a className="tooltip-card-header-text">{moment(values.label).format("MM-DD-YYYY")}</a><br/>
-                <span className="tooltip-card-header-subtitle">{moment(values.label).diff(moment("2020-01-22"), "days")} days since outbreak</span>
+                <a className="tooltip-card-header-text">{moment(values.label.replace(/-/g, '/')).format("MM-DD-YYYY")}</a><br/>
+                <span className="tooltip-card-header-subtitle">{moment(values.label.replace(/-/g, '/')).diff(moment("2020/01/22"), "days")} days since outbreak</span>
             </div>
             <div className="tooltip-card-body">
                 <div className="table">
@@ -164,7 +176,7 @@ const Chart = (props) => {
                     {metricselected==="recovered" ? <div className="chartButton-enabled column" style={{"backgroundColor":"green"}} onClick={()=> setMetricSelected("recovered")}><a className="chartButton-Text">Recovered</a></div> : <div className="chartButton column" onClick={()=> setMetricSelected("recovered")}><a className="chartButton-Text">Recovered</a></div>}
                 </div>
             </div>}
-            {singleCountryReport ? renderSingleChart() : renderComparisionChart(countryTimeSeriesList, metricselected)}
+            {singleCountryReport ? (countryTimeSeriesList[countryNameList[0]]!==null ? renderSingleChart() : <a className="portal-text">Sorry, Historical data is not available for this country</a>) : renderComparisionChart(countryTimeSeriesList, metricselected)}
         </div>}
         </React.Fragment>
     )

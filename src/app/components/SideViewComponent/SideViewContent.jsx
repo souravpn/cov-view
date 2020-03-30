@@ -11,8 +11,6 @@ const SideViewContent = (props) => {
 
     const[countryList, setCountryList] = useState(undefined);
 
-    // console.log("SideViewContent")
-
     useEffect(() => {
         JhuServer.getStatsByAllCountry()
         .then(
@@ -23,8 +21,6 @@ const SideViewContent = (props) => {
     const compare = (a,b) => {
         if(a.country > b.country) return 1; else return -1;
     }
-
-    // console.log(countryList)
 
     return(
         <div className="sideViewContentArea">

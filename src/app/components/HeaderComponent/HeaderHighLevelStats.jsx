@@ -24,7 +24,7 @@ const HeaderHighLevelStats = () => {
                 <div className="row">
                     <div className="column" style={{"width":"20%", "float":"left"}}>
                         <div className="HighLevelStatsBox">
-                            <div className="HighLevelStatsBoxHeader">Total Cases</div>
+                            <div className="HighLevelStatsBoxHeader"><a className="portal-text">Total Cases</a></div>
                             <div className="HighLevelStatsBoxContent">
                                 <div className="HighLevelStatsBoxContentText" style={{"color":"blue"}}>
                                     {highLevelStats!==undefined ? nf.format(highLevelStats.cases) : "Loading..."}
@@ -34,7 +34,7 @@ const HeaderHighLevelStats = () => {
                     </div>
                     <div className="column" style={{"width":"20%", "float":"left"}}>
                         <div className="HighLevelStatsBox">
-                            <div className="HighLevelStatsBoxHeader">Deaths</div>
+                            <div className="HighLevelStatsBoxHeader"><a className="portal-text">Deaths</a></div>
                             <div className="HighLevelStatsBoxContent">
                                 <div className="HighLevelStatsBoxContentText" style={{"color":"red"}}>
                                     {highLevelStats!==undefined ? nf.format(highLevelStats.deaths) : "Loading..."}
@@ -44,7 +44,7 @@ const HeaderHighLevelStats = () => {
                     </div>
                     <div className="column" style={{"width":"20%", "float":"left"}}>
                         <div className="HighLevelStatsBox">
-                            <div className="HighLevelStatsBoxHeader">Critical</div>
+                            <div className="HighLevelStatsBoxHeader"><a className="portal-text">Critical</a></div>
                             <div className="HighLevelStatsBoxContent">
                                 <div className="HighLevelStatsBoxContentText" style={{"color":"orange"}}>
                                 {highLevelStats!==undefined ? nf.format(highLevelStats.critical) : "Loading..."}
@@ -54,7 +54,7 @@ const HeaderHighLevelStats = () => {
                     </div>
                     <div className="column" style={{"width":"20%", "float":"left"}}>
                         <div className="HighLevelStatsBox">
-                            <div className="HighLevelStatsBoxHeader">Recovered</div>
+                            <div className="HighLevelStatsBoxHeader"><a className="portal-text">Recovered</a></div>
                             <div className="HighLevelStatsBoxContent">
                                 <div className="HighLevelStatsBoxContentText" style={{"color":"green"}}>
                                     {highLevelStats!==undefined ? nf.format(highLevelStats.recovered) : "Loading..."}
@@ -64,7 +64,7 @@ const HeaderHighLevelStats = () => {
                     </div>
                     <div className="column" style={{"width":"20%", "float":"left"}}>
                         <div className="HighLevelStatsBox">
-                            <div className="HighLevelStatsBoxHeader">Active Cases</div>
+                            <div className="HighLevelStatsBoxHeader"><a className="portal-text">Active Cases</a></div>
                             <div className="HighLevelStatsBoxContent">
                                 <div className="HighLevelStatsBoxContentText" style={{"color":"pink"}}>
                                     {highLevelStats!==undefined ? nf.format(highLevelStats.active) : "Loading..."}

@@ -38,7 +38,6 @@
                         font-weight: 700;
                         font-size: 2vw; //vw - ViewportWidth for responsive content
                     }
-                    
                     :hover{
                         opacity: 0.3;
                     }
@@ -61,11 +60,12 @@
         width: 100%;
         padding-left: 2rem;
         padding-top: 5px;
-        // background-color: rgb(80, 255, 255);
+        // background-color: rgb(7, 95, 95);
         .mainViewAreaHeadingText{
             font-family: 'Courier New', Courier, monospace;
             font-weight: 700;
             font-size: 1em;
+            // color: cyan;
         }
     }
     .countryComparisionHeader{
@@ -183,9 +183,11 @@
             }
             :hover{
                 background-color: rgb(211, 211, 211);
+                cursor: pointer;
             }
             :active{
                 background-color: rgb(182, 182, 182);
+                cursor: pointer;
             }
 
             .chartButton-enabled{
@@ -206,9 +208,11 @@
             }
             :hover{
                 background-color: rgb(211, 211, 211);
+                cursor: pointer;
             }
             :active{
                 background-color: rgb(182, 182, 182);
+                cursor: pointer;
             }
         }
         .chartResponsiveContainer{
@@ -279,4 +283,10 @@
             }
         }
     }
+}
+
+.portal-text{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-size: 1em;
 }
